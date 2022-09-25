@@ -17,5 +17,5 @@ kubectl get deploy,rs,svc,pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward deployment/predict-kubernate 80:80
-
+kubectl expose pod predict-kubernate-7fdb658ffc-8t7lv --port=80 --name=api
+kubectl port-forward pod/predict-kubernate-7fdb658ffc-8t7lv 8080:80
